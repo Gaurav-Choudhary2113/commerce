@@ -1,0 +1,37 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <h2> Your watchlist </h2>
+    
+    {% if not products %}
+    <h6> No items added </h6>
+    {% endif %}
+
+    {% for product in products %}
+    <div class="card mb-3" style="max-width: 95%; max-height: fit-content">
+        <a href="{% url 'product_page' product_id=product.id %}"  style="text-decoration: none; color: black;">
+        <div class="row g-0">
+            
+            <div class="col-md-4">
+                {% if product.image_url %}
+                    <img src="{{ product.image_url }}" class="img-fluid rounded-start" alt="{{ product.title }}" style="max-height: 250px; max-width: 250px; width: auto; height: auto; min-height: 100px; min-width: 100px; padding-left: 30px">
+                {% else %}
+                    <h4> Image unavailable </h4>
+                {% endif %}
+            </div>
+            
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text"><strong>Current price:  ${{ product.start_bid }}</strong></p>
+                <p class="card-text"><small class="text-body-secondary">Created on: {{ product.created_on }}</small></p>
+                
+            </div>
+            </div>
+
+        </div>
+    </a>
+    </div>
+    {% endfor %}
+{% endblock %}

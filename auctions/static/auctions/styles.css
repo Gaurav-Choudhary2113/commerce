@@ -1,0 +1,19 @@
+body {
+    padding: 10px;
+}
+
+.img-fluid {
+    max-width: 200px !important; /* maximum width */
+    max-height: 200px !important; /* maximum height */
+    width: auto; /* allow proportional resizing */
+    height: auto; /* allow proportional resizing */
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline!important;
+}
