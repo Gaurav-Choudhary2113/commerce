@@ -33,9 +33,9 @@
         {% endif %}
 
         {% if bid_msg == "low_bid" %}
-            <p> Warning: Bid amount must be higher than current price </p>
+            <p style="color: rgb(238, 66, 66);"> * Warning: Bid amount must be higher than current price </p>
         {% elif bid_msg == "high_bid" %}
-            <p> Bid placed successfully </p>
+            <p style="color: rgb(92, 255, 47);"> Bid placed successfully </p>
         {% else %}
             <p></p>
         {% endif %}
@@ -76,10 +76,10 @@
     {% endif %}
     
     <br>
-    <h4> Comments </h4>
-    <ul>
+    <h4 style="font-weight: 600; margin-bottom: 20px;"> Comments </h4>
+    <ul style="background-color: azure; color: black; border-radius: 10px; padding: 20px 30px;">
     {% for comment in comments %}
-        <li><i><b>{{ comment.writer }}</b></i>: {{ comment.comment_msg }} </li>
+        <li><i><b>{{ comment.writer }}</b></i> : {{ comment.comment_msg }} </li>
     {% endfor %}
     </ul>
     </div>
