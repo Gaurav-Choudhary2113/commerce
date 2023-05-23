@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<form action="{% url 'create_listing' %}" method="post">
+<form action="{% url 'create_listing' %}" method="post" style="width: 40%; margin-left: auto; margin-right: auto;">
     {% csrf_token %}
     <div class="form-group">
         <input autofocus class="form-control" type="text" name="title" placeholder="Title" max-length="80">

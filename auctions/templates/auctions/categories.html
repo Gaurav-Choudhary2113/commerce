@@ -2,11 +2,13 @@
 
 {% block body %}
     <h2> Available product categories: </h2>
-    <ul>
-        {% for category in categories %}
-        <li>
-            <a href="{% url 'category_items' category_type=category %}">{{ category }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+   
+        <ul>
+            {% for category in categories %}
+            <li  style="text-decoration: none; display: block;border: 2px solid rgb(233, 233, 233); padding: 7px 7px ; margin: 20px 15px 20px 15px; width: max-content; background-color: rgb(12, 12, 44); border-radius: 7px;  font-family: 'Poppins', sans-serif;">
+                <a href="{% url 'category_items' category_type=category %}" >{{ category }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    
 {% endblock %}
